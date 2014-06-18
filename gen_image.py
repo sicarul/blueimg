@@ -1,5 +1,5 @@
 
-import datetime, locale, tempfile, subprocess, sys
+import datetime, locale, tempfile, subprocess, sys, os
 
 def generate_imgblue(valores):
   locale.setlocale(locale.LC_TIME, "es_AR.UTF-8")
@@ -16,8 +16,8 @@ def generate_imgblue(valores):
       o.write(template)
       o.flush()
   
-  subprocess.call(['wkhtmltoimage', '--width', '504', 'out.html', 'facebook.png'])
-  subprocess.call(['wkhtmltoimage', '--width', '440', 'out.html', 'twitter.png'])
+  subprocess.call(['wkhtmltoimage', '--width', '504', 'out.html', os.path.join('out', 'facebook.png')])
+  subprocess.call(['wkhtmltoimage', '--width', '440', 'out.html', os.path.join('out', 'twitter.png')])
 
 generate_imgblue([
   {'name':'Blue', 'values':sys.argv[1:3]},
