@@ -3,5 +3,5 @@ include/
 lib/
 local/
 *.pyc
-*.png
+out/*png
 out.html
