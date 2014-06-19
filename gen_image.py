@@ -17,7 +17,7 @@ def generate_imgblue(valores):
       o.flush()
   
   subprocess.call(['wkhtmltoimage', '--width', '504', 'out.html', os.path.join('out', 'facebook.png')])
-  subprocess.call(['wkhtmltoimage', '--width', '440', 'out.html', os.path.join('out', 'twitter.png')])
+  subprocess.call(['wkhtmltoimage', '--width', '528', 'out.html', os.path.join('out', 'twitter.png')])
 
 generate_imgblue([
   {'name':'Blue', 'values':sys.argv[1:3]},
