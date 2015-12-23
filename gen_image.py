@@ -3,7 +3,7 @@ import datetime, locale, tempfile, subprocess, sys, os
 
 def generate_imgblue(valores):
   locale.setlocale(locale.LC_TIME, "es_AR.UTF-8")
-  
+
   with open('out.html', 'wb') as o:
     with open('template.html') as f:
       template = f.read()
@@ -15,13 +15,11 @@ def generate_imgblue(valores):
       template = template.replace('%FECHA%', datetime.datetime.now().strftime('%c'))
       o.write(template)
       o.flush()
-  
+
   subprocess.call(['wkhtmltoimage', '--width', '504', 'out.html', os.path.join('out', 'facebook.png')])
   subprocess.call(['wkhtmltoimage', '--width', '528', 'out.html', os.path.join('out', 'twitter.png')])
 
 generate_imgblue([
   {'name':'Blue', 'values':sys.argv[1:3]},
-  {'name':'Oficial', 'values':sys.argv[3:5]},
-  {'name':'Ahorro', 'values':sys.argv[5:7]},
-  {'name':'Tarjeta', 'values':sys.argv[7:9]}
+  {'name':'Oficial', 'values':sys.argv[3:5]}
   ])
