@@ -16,43 +16,90 @@
     body.bluelytics {
       font-family:'GT Walsheim'
     }
+    h2.bluetitle{
+      font-size:35px;
+      margin-top:75px;
+      margin-left:20%;
+      margin-right:20px;
+    }
+
+    h3.rateTitle{
+      font-size:45px;
+      text-align: center;
+      margin-top:40px;
+    }
+    h4.buysell{
+      font-size:25px;
+      text-align: center;
+    }
+    h5.rate{
+      font-size:50px;
+      text-align: center;
+    }
+    div.footer{
+      margin-top:40px;
+      font-size:15px;
+      text-align:right;
+      margin-right:10px;
+      font-style: italic;
+    }
     </style>
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body class='bluelytics'>
   <div class="container">
-  <div class="jumbotron">
-    <h2><img src="img/logo.png" width='60' style="margin-right:10px;">Bluelytics</h2>
-    <table class="table">
-    <thead>
-      <tr>
-        <th>Dolar</th>
-        <th>Compra</th>
-        <th>Venta</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="success">
-        <td>Oficial</td>
-        <td>%Oficial_Compra%</td>
-        <td>%Oficial_Venta%</td>
-      </tr>
-      <tr class="info">
-        <td>Blue</td>
-        <td>%Blue_Compra%</td>
-        <td>%Blue_Venta% <small>(+30%)</small></td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="3">
-        <div class="pull-right"><small>Actualizacion a la fecha: %FECHA%.</small></div><br>
-        <div class="pull-right"><small>Para mas informacion visita el sitio web: <em>www.bluelytics.com.ar</em></small></div>
-        </td>
-      </tr>
-    </tfoot>
-    </table>
-  </div>
+    <h2 class='bluetitle'><img width=100 src="img/logo.png">Bluelytics</h2>
+
+    <span style="color:#221199;">
+      <div class="row">
+        <div class='col-xs-12'>
+          <h3 class="rateTitle">Dólar Blue/Libre</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <h4 class='buysell'>Compra</h4>
+        </div>
+        <div class="col-xs-6">
+          <h4 class='buysell'>Venta</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <h5 class='rate'>%Blue_Compra%</h4>
+        </div>
+        <div class="col-xs-6">
+          <h5 class='rate'>%Blue_Venta%</h4>
+        </div>
+      </div>
+    </span>
+
+    <span style="color:#229922;">
+      <div class="row">
+        <div class='col-xs-12'>
+          <h3 class="rateTitle">Dólar Oficial</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <h4 class='buysell'>Compra</h4>
+        </div>
+        <div class="col-xs-6">
+          <h4 class='buysell'>Venta <small>(+30%)</small></h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <h5 class='rate'>%Oficial_Compra%</h4>
+        </div>
+        <div class="col-xs-6">
+          <h5 class='rate'>%Oficial_Venta%</h4>
+        </div>
+      </div>
+    </span>
+
+    <div class="footer">Actualización a la fecha: %FECHA%.<br>
+      Para mas información visita el sitio web: <em>www.bluelytics.com.ar</em></div>
   </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
