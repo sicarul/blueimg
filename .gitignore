@@ -5,3 +5,4 @@ local/
 *.pyc
 out/*png
 out.html
+out_ig.html

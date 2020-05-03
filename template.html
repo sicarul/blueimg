@@ -5,13 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bluelytics</title>
+    <style>
 
+    @font-face {
+      font-family: 'GT Walsheim';
+
+      src: url('fonts/gtwalsheim.eot');
+      src: url('fonts/gtwalsheim.eot?#iefix') format('embedded-opentype'), url('fonts/gtwalsheim.woff') format('woff'), url('fonts/gtwalsheim.ttf') format('truetype'), url('fonts/gtwalsheim.svg#glyphicons_halflingsregular') format('svg');
+    }
+    body.bluelytics {
+      font-family:'GT Walsheim'
+    }
+    </style>
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
-  <body>
+  <body class='bluelytics'>
   <div class="container">
   <div class="jumbotron">
-    <h2><img src="img/logo.png">Bluelytics</h2>
+    <h2><img src="img/logo.png" width='60' style="margin-right:10px;">Bluelytics</h2>
     <table class="table">
     <thead>
       <tr>
@@ -29,7 +40,7 @@
       <tr class="info">
         <td>Blue</td>
         <td>%Blue_Compra%</td>
-        <td>%Blue_Venta%</td>
+        <td>%Blue_Venta% <small>(+30%)</small></td>
       </tr>
     </tbody>
     <tfoot>

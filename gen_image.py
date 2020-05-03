@@ -9,8 +9,24 @@ def generate_imgblue(valores):
       template = f.read()
 
       for v in valores:
-        template = template.replace('%%%s_Compra%%' % v['name'], str(v['values'][0]))
-        template = template.replace('%%%s_Venta%%' % v['name'], str(v['values'][1]))
+        buy = str(v['values'][0])
+        sell = str(v['values'][1])
+        template = template.replace('%%%s_Compra%%' % v['name'], buy)
+        template = template.replace('%%%s_Venta%%' % v['name'], sell)
+
+      template = template.replace('%FECHA%', datetime.datetime.now().strftime('%c'))
+      o.write(template)
+      o.flush()
+
+  with open('out_ig.html', 'wb') as o:
+    with open('template_ig.html') as f:
+      template = f.read()
+
+      for v in valores:
+        buy = str(v['values'][0])
+        sell = str(v['values'][1])
+        template = template.replace('%%%s_Compra%%' % v['name'], buy)
+        template = template.replace('%%%s_Venta%%' % v['name'], sell)
 
       template = template.replace('%FECHA%', datetime.datetime.now().strftime('%c'))
       o.write(template)
@@ -18,6 +34,7 @@ def generate_imgblue(valores):
 
   subprocess.call(['wkhtmltoimage', '--width', '504', 'out.html', os.path.join('out', 'facebook.png')])
   subprocess.call(['wkhtmltoimage', '--width', '528', 'out.html', os.path.join('out', 'twitter.png')])
+  subprocess.call(['wkhtmltoimage', '--width', '1080', '--height', '1920', 'out_ig.html', os.path.join('out', 'instagram.png')])
 
 generate_imgblue([
   {'name':'Blue', 'values':sys.argv[1:3]},
